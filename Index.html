@@ -88,10 +88,19 @@
             const errorMessage = document.getElementById('error-message');
 
             // User credentials
-            const users = {
-                "user1@example.com": "password123",
-                "user2@example.com": "password456",
-                "admin@domain.com": "adminpass"
+            const basicUsers = {
+                "basic1@example.com": "password123",
+                "basic2@example.com": "password456"
+            };
+
+            const middleUsers = {
+                "middle1@example.com": "password789",
+                "middle2@example.com": "password012"
+            };
+
+            const advancedUsers = {
+                "advanced1@example.com": "password345",
+                "advanced2@example.com": "password678"
             };
 
             // Clear previous error message
@@ -104,8 +113,12 @@
             }
 
             // Check user credentials
-            if (users[email] && users[email] === password) {
-                window.location.href = "https://www.founderofenglish.com/course-videos";
+            if (basicUsers[email] && basicUsers[email] === password) {
+                window.location.href = "https://www.founderofenglish.com/course-videos-basic";
+            } else if (middleUsers[email] && middleUsers[email] === password) {
+                window.location.href = "https://www.founderofenglish.com/course-videos-middle";
+            } else if (advancedUsers[email] && advancedUsers[email] === password) {
+                window.location.href = "https://www.founderofenglish.com/course-videos-advanced";
             } else {
                 errorMessage.textContent = "Invalid email or password.";
             }
